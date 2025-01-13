@@ -6,14 +6,14 @@ import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.example.GrpcCouponServiceGrpc;
 import net.devh.boot.grpc.example.GrpcCouponServiceRequest;
 import net.devh.boot.grpc.example.GrpcCouponServiceResponse;
-import org.lognet.springboot.grpc.GRpcService;
+import net.devh.boot.grpc.server.service.GrpcService;
 
-@GRpcService
-public class GrpcCouponServiceServer extends GrpcCouponServiceGrpc.GrpcCouponServiceImplBase{
+@GrpcService
+public class CouponServiceControllerGrpcServer extends GrpcCouponServiceGrpc.GrpcCouponServiceImplBase{
 
     private final CouponDiscountBusiness couponDiscountBusiness;
 
-    public GrpcCouponServiceServer(CouponDiscountBusiness couponDiscountBusiness) {
+    public CouponServiceControllerGrpcServer(CouponDiscountBusiness couponDiscountBusiness) {
         this.couponDiscountBusiness = couponDiscountBusiness;
     }
 
